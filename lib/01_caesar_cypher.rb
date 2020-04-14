@@ -33,3 +33,27 @@ def convert_ascii(ascii, number)
 	return crypt
 end
 
+=begin
+	
+def encode_letter(char, offset)
+    ascii_code = char.ord
+    if (67..90).member?(ascii_code) || (97..122).member?(ascii_code)
+        if (67..90).member?(ascii_code + offset) || (97..122).member?(ascii_code + offset)
+            return (ascii_code + offset).chr
+        else
+            return (ascii_code + offset - 26).chr
+        end
+    else
+        return (ascii_code).chr
+    end
+end
+
+def encode_string(str,offset)
+    encoded_txt = ""
+    for i in 0..str.length-1 do
+        encoded_txt.concat(encode_letter(str[i],offset))
+    end
+    puts "le texte codé est: #{encoded_txt}"
+end
+	
+end
